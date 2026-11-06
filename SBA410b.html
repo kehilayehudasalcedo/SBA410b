@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head> <!-- CEREBRO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Accessible Design Co.</title>
+    <link rel="stylesheet" href="./SBA410b.css"> <!--🔴-->
+    <script src="./SBA410b.js"></script> <!--🔴-->
+    <title>Accessible Design Co.</title>
+</head>
+
+<body>
+    <!-- ROSTRO -->
+    <header class="site-header">  <!--site-header-->
+        <div class="logo-container"> <!--logo-container-->
+            <img src="./images/1_brain.jpg" alt="Accessible Design Co. Logo" class="logo">
+            <br>
+            <div class="company-name">Accessible Design Co.</div> <!--❌ span or div Eliminar linea -->
+        </div>
+
+        <!-- OJOS con ARIA-->
+        <nav role="navigation" aria-label="Main Navigation" class="nav-bar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- PECHO -->
+    <main id="main"> 
+        <!-- HERO  -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Design for Everyone, Built for Success</h1>
+                <p>We create fully accessible, responsive, and modern web experiences that welcome every user.</p>
+                <a href="#contact" class="cta-button">Get in Touch</a> <!--call-to-action-->
+            </div>
+        </section> 
+
+        <!-- About Us Section -->
+        <section id="about" class="about-section"> 
+            <h2>About Us</h2>
+            <article>
+                <p>At Accessible Design Co., we believe the web should be open to all individuals regardless of ability. Our expert team combines cutting-edge frontend development with universal design principles to ensure digital equity and exceptional user experiences.</p>
+            </article>
+        </section> 
+
+        <!-- Services Section (Grid Layout) -->
+        <section id="services" class="services-section">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Web Accessibility Audits</h3>
+                    <p>Comprehensive evaluations of your existing website against WCAG standards.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Inclusive UI/UX Design</h3>
+                    <p>Designing custom interfaces optimized for screen readers and keyboard navigation.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Accessible Code Development</h3>
+                    <p>Writing clean, semantic HTML, robust CSS, and accessible JavaScript components.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="contact-section">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label> 
+                    <input type="text" id="name" name="name" placeholder="Kehila Evans Salcedo" required aria-describedby="name-desc">
+                    <small id="name-desc">Please enter your full name.</small>
+                </div>
+
+                <div class="form-group"> 
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="kehila.yehuda.salcedo@gmail.com" required aria-describedby="email-desc">
+                    <small id="email-desc">We will never share your email with anyone else.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required aria-describedby="msg-desc"></textarea>
+                    <small id="msg-desc">Tell us about your project or inquiry.</small>
+                </div>
+
+                <!--BUTTON-->
+                <button type="button" class="submit-btn" onclick="submitForm()">Send Message</button>
+                <!-- POLITE -->
+                <div id="statusMessage" aria-live="polite" class="status-msg"></div>
+            </form>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>&copy; 2026 Accessible Design Co.</p>
+        <div class="footer-links">
+            <a href="#home">Privacy Policy</a>
+            <a href="#home">Terms of Service</a>
+        </div>
+        <div class="contact-details">
+            <p>Email: kehila.yehuda.salcedo@gmail.com | Phone: 609-608-68-15</p>
+        </div>
+    </footer>
+</body>
+</html>
